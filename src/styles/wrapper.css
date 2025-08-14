@@ -1,0 +1,14 @@
+.formPreviewWrapper {
+  display: flex;
+  justify-content: space-evenly;
+
+  padding: 20px;
+  margin-top: 20px;
+
+  width: 95vw;
+
+  flex: 1;
+  overflow: auto;
+
+  background: transparent;
+}

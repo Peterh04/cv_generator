@@ -1,0 +1,112 @@
+:root {
+  --primary-color-800: #c29b88;
+  --primary-color-600: #ebd9ca;
+  --primary-color-500: #f3e3d2;
+  --primary-color-400: #fcf9f2;
+
+  --secondary-color-400: #d2bfa1;
+
+  --text-primary-color-400: #5f4a3f;
+  --text-primary-color-300: #816759;
+  --text-primary-color-200: #bbb0a7;
+}
+
+@font-face {
+  font-family: "Bangfel";
+  src: local("Bangfel"), url("../assets/fonts/Bangfel.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "RigidDisplayBold";
+  src: local("RigidDisplayBold"),
+    url("../assets/fonts/RigidDisplayBold-PKjd2.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.previewFormContainer {
+  display: flex;
+
+  border-radius: 10px;
+
+  min-width: 600px;
+  min-height: 650px;
+
+  border: 1.5px solid var(--text-primary-color-400);
+  color: var(--text-primary-color-400);
+  background-color: transparent;
+}
+
+.previewFormContainer > .cv-profileSection {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+
+  background-color: transparent;
+
+  padding: 50px 70px 50px 70px;
+}
+
+.cv-profileSection > .cv-header {
+  font-family: "Bangfel";
+  font-size: 2rem;
+  letter-spacing: 3px;
+}
+
+.cv-header > .firstName,
+.lastName {
+  margin: 0;
+  line-height: 0.9;
+}
+
+.cv-profileSection > .cv-job-header {
+  margin-top: 30px;
+}
+
+.jobTitle {
+  font-size: 1.3rem;
+  font-weight: 800;
+  /* font-family: "RigidDisplayBold"; */
+}
+
+.cv-profileSection > .cv-contacts {
+  margin-top: 20px;
+}
+.cv-contacts > .contact {
+  display: flex;
+  align-items: center;
+
+  margin-top: 10px;
+
+  font-weight: lighter;
+  font-size: 1rem;
+}
+
+.contact > .fa-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+
+  color: var(--primary-color-400);
+  background-color: var(--text-primary-color-400);
+  border-radius: 50%;
+
+  width: 25px;
+  height: 25px;
+}
+.fa-wrapper > .fa {
+  font-size: 0.8rem;
+}
+
+.previewFormContainer > .cv-work-experience {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+
+  background-color: green;
+}

@@ -1,0 +1,28 @@
+:root {
+  --primary-color-800: #c29b88;
+  --primary-color-600: #ebd9ca;
+  --primary-color-500: #f3e3d2;
+  --primary-color-400: #fcf9f2;
+
+  --secondary-color-400: #d2bfa1;
+
+  --text-primary-color-400: #5f4a3f;
+  --text-primary-color-300: #816759;
+  --text-primary-color-200: #bbb0a7;
+}
+
+.formWrapper {
+  display: flex;
+  flex-direction: column;
+
+  padding: 25px;
+
+  border-radius: 10px;
+
+  min-width: 450px;
+  min-height: 650px;
+
+  border: 1.5px solid var(--text-primary-color-400);
+  color: var(--text-primary-color-400);
+  background-color: transparent;
+}

@@ -1,0 +1,116 @@
+:root {
+  --primary-color-800: #c29b88;
+  --primary-color-600: #ebd9ca;
+  --primary-color-500: #f3e3d2;
+  --primary-color-400: #fcf9f2;
+
+  --secondary-color-400: #d2bfa1;
+
+  --text-primary-color-400: #5f4a3f;
+  --text-primary-color-300: #816759;
+  --text-primary-color-200: #bbb0a7;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 20px;
+  margin-left: 50px;
+  width: 90vw;
+
+  border-radius: 20px;
+
+  background-color: var(--primary-color-800);
+
+  color: var(--text-primary-color-400);
+}
+
+.header > .headerBtns {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+
+  width: 40%;
+
+  border-radius: 20px;
+
+  font-size: 1.1rem;
+
+  background-color: var(--primary-color-600);
+
+  margin-left: 400px;
+}
+
+.headerBtns > button {
+  display: flex;
+  padding: 5px 15px 5px 15px;
+
+  border: none;
+  background: none;
+
+  cursor: pointer;
+
+  color: var(--text-primary-color-400);
+
+  transition: background-color 0.3s ease;
+}
+
+/* .headerBtns > button > .btn-divider {
+  color: red;
+  width: 2px;
+  height: 22px;
+  margin-left: 5px;
+
+  align-items: center;
+
+  background: var(--text-primary-color-400);
+} */
+
+.headerBtns > button:hover {
+  background-color: var(--secondary-color-400);
+  border-radius: 15px;
+
+  color: var(--text-primary-color-300);
+}
+
+/* actionButtons holds the ai button and print Btn */
+.header > .actionButtons {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+
+  background-color: transparent;
+
+  width: 10%;
+}
+
+.actionButtons > button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 40px;
+  height: 40px;
+
+  background-color: transparent;
+
+  border: none;
+  border-radius: 50%;
+
+  cursor: pointer;
+
+  transition: background-color 0.3s ease;
+}
+
+.actionButtons > button:hover {
+  background-color: var(--secondary-color-400);
+
+  border-radius: 50%;
+}
+
+.actionButtons > button > .fa {
+  font-size: 1.2rem;
+  color: var(--primary-color-400);
+}
