@@ -33,12 +33,14 @@
 
   border-radius: 10px;
 
-  min-width: 600px;
+  width: 650px;
   min-height: 650px;
 
   border: 1.5px solid var(--text-primary-color-400);
   color: var(--text-primary-color-400);
   background-color: transparent;
+
+  overflow-y: auto;
 }
 
 .previewFormContainer > .cv-profileSection {
@@ -103,10 +105,77 @@
   font-size: 0.8rem;
 }
 
+/*cv-eductaion styles*/
+
+.cv-profileSection > .cv-education {
+  margin-top: 40px;
+}
+
+.snuggly-header {
+  position: relative;
+  display: inline-block;
+
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.snuggly-header::before {
+  content: "";
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  width: 600%;
+  height: 500%;
+
+  background: url("../assets/blobs.svg") no-repeat center;
+  background-size: contain;
+
+  z-index: -1;
+}
+.cv-education > .school-list {
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+
+  font-size: 0.9rem;
+
+  padding-top: 15px;
+}
+
+.school-list > li {
+  display: flex;
+  flex-direction: column;
+
+  margin-top: 20px;
+
+  font-weight: 100;
+}
+
+.school-list > li > .fieldStudy {
+  font-weight: lighter;
+}
+
 .previewFormContainer > .cv-work-experience {
   display: flex;
   flex-direction: column;
   flex: 1;
 
   background-color: green;
+
+  padding: 50px 70px 50px 70px;
+}
+
+.previewFormContainer {
+  display: flex;
+  gap: 20px; /* space between the columns */
+}
+.previewFormContainer > .cv-profileSection,
+.previewFormContainer > .cv-work-experience {
+  flex: 1;
+  padding: 50px; /* uniform padding, or adjust as needed */
 }

@@ -3,15 +3,17 @@ import "../styles/header.css";
 import { faHexagonNodesBolt, faPrint } from "@fortawesome/free-solid-svg-icons";
 
 faHexagonNodesBolt;
-export default function Header({ active, setActive }) {
+export default function Header({ onFormChange }) {
   return (
     <div className="header">
       <h2>CV Generator</h2>
       <div className="headerBtns">
-        <button>Personal information |</button>
-        <button>Education |</button>
-        <button>Experience |</button>
-        <button>Skills</button>
+        <button onClick={() => onFormChange("personal")}>
+          Personal information |
+        </button>
+        <button onClick={() => onFormChange("education")}>Education |</button>
+        <button onClick={() => onFormChange("experience")}>Experience |</button>
+        <button onClick={() => onFormChange("skills")}>Skills</button>
       </div>
       <div className="actionButtons">
         <button>

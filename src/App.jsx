@@ -3,6 +3,10 @@ import FormPreview from "./components/FormPreview";
 import Header from "./components/Header";
 import PersonalInfoForm from "./components/PersonalInfoForm";
 import Wrapper from "./components/Wrapper";
+import EducationForm from "./components/EducationForm";
+import initailSchools from "./schools";
+import initalWork from "./work";
+import WorkExperienceForm from "./components/WorkExperienceForm";
 
 export default function App() {
   const [formData, setFormData] = useState({
@@ -13,13 +17,25 @@ export default function App() {
     userPhone: "",
     userAddress: "",
   });
-  const [active, setActive] = useState(0);
+
+  const [currentForm, setCurrentForm] = useState("personal");
+  const [schools, setSchools] = useState(initailSchools);
+  const [works, setWorks] = useState(initalWork);
+
   return (
     <div>
-      <Header active={active} setActive={setActive} />
+      <Header onFormChange={setCurrentForm} />
       <Wrapper>
-        <PersonalInfoForm formData={formData} setFormData={setFormData} />
-        <FormPreview formData={formData} />
+        {currentForm === "personal" && (
+          <PersonalInfoForm formData={formData} setFormData={setFormData} />
+        )}
+        {currentForm === "education" && (
+          <EducationForm schools={schools} setSchools={setSchools} />
+        )}
+        {currentForm === "work" && (
+          <WorkExperienceForm works={works} setWorks={setWorks} />
+        )}
+        <FormPreview formData={formData} schools={schools} />
       </Wrapper>
     </div>
   );

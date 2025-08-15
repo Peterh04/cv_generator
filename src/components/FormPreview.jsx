@@ -6,7 +6,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import "../styles/formPreview.css";
 
-export default function FormPreview({ formData }) {
+export default function FormPreview({ formData, schools }) {
   return (
     <div>
       <div className="previewFormContainer">
@@ -44,8 +44,32 @@ export default function FormPreview({ formData }) {
               </h3>
             )}
           </div>
+
+          <div className="cv-education">
+            {schools.length > 0 && (
+              <>
+                <h2 className="snuggly-header">Education</h2>
+
+                <ul className="school-list">
+                  {schools.map((school) => (
+                    <li key={school.id}>
+                      <h3>
+                        {new Date(school.schoolStartDate).getFullYear()}{" "}
+                        <span>-</span>{" "}
+                        {new Date(school.schoolEndDate).getFullYear()}
+                      </h3>
+                      <h3>{school.schoolName}</h3>
+                      <h3 className="fieldStudy">{school.fieldStudyName}</h3>
+                    </li>
+                  ))}
+                </ul>
+              </>
+            )}
+          </div>
         </div>
-        <div className="cv-work-experience"></div>
+        <div className="cv-work-experience">
+          <div className="profile-container"></div>
+        </div>
       </div>
     </div>
   );

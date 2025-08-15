@@ -1,27 +1,6 @@
 import "../styles/form.css";
 import "../styles/PersonalInfo.css";
-
-function FormInputs({
-  idName,
-  labelTitle,
-  inputType,
-  change = "l",
-  value = "",
-}) {
-  return (
-    <div className="formInput">
-      <label htmlFor={idName}>{labelTitle}</label>
-      <input
-        type={inputType}
-        id={idName}
-        autoComplete="off"
-        onChange={change}
-        value={value}
-      />
-    </div>
-  );
-}
-
+import FormInputs from "../components/FormInputs";
 export default function PersonalInfoForm({ formData, setFormData }) {
   const handleFirstName = (e) => {
     setFormData({ ...formData, firstName: e.target.value });
@@ -50,7 +29,6 @@ export default function PersonalInfoForm({ formData, setFormData }) {
     <form className="formWrapper">
       <h4>Personal Information</h4>
       <h5>About you</h5>
-      {/* <h2>lol: {formData.lastName}</h2> */}
 
       <div className="formInputs">
         <FormInputs
