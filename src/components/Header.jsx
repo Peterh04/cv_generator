@@ -1,9 +1,14 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../styles/header.css";
 import { faHexagonNodesBolt, faPrint } from "@fortawesome/free-solid-svg-icons";
+import React from "react";
+import { useReactToPrint } from "react-to-print";
 
-faHexagonNodesBolt;
-export default function Header({ onFormChange }) {
+export default function Header({ onFormChange, cvRef }) {
+  const handlePrint = useReactToPrint({
+    content: () => cvRef.current,
+  });
+
   return (
     <div className="header">
       <h2>CV Generator</h2>
@@ -16,7 +21,11 @@ export default function Header({ onFormChange }) {
         <button onClick={() => onFormChange("skills")}>Skills</button>
       </div>
       <div className="actionButtons">
-        <button>
+        <button
+          onClick={() => {
+            handlePrint;
+          }}
+        >
           <FontAwesomeIcon icon={faPrint} className="fa" />
         </button>
         <button>

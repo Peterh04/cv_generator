@@ -1,0 +1,20 @@
+.job-description-label {
+  display: flex;
+  flex-direction: column;
+
+  margin-top: 20px;
+}
+
+.job-description-label > textarea {
+  display: flex;
+  padding: 10px;
+
+  border-radius: 5px;
+
+  border: 1px solid #c29b88;
+  height: 100px;
+
+  resize: none;
+
+  color: #bbb0a7;
+}

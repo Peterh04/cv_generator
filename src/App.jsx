@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import FormPreview from "./components/FormPreview";
 import Header from "./components/Header";
 import PersonalInfoForm from "./components/PersonalInfoForm";
@@ -22,9 +22,11 @@ export default function App() {
   const [schools, setSchools] = useState(initailSchools);
   const [works, setWorks] = useState(initalWork);
 
+  const cvRef = useRef();
+
   return (
     <div>
-      <Header onFormChange={setCurrentForm} />
+      <Header onFormChange={setCurrentForm} cvRef={cvRef} />
       <Wrapper>
         {currentForm === "personal" && (
           <PersonalInfoForm formData={formData} setFormData={setFormData} />
@@ -32,10 +34,15 @@ export default function App() {
         {currentForm === "education" && (
           <EducationForm schools={schools} setSchools={setSchools} />
         )}
-        {currentForm === "work" && (
+        {currentForm === "experience" && (
           <WorkExperienceForm works={works} setWorks={setWorks} />
         )}
-        <FormPreview formData={formData} schools={schools} />
+        <FormPreview
+          formData={formData}
+          schools={schools}
+          works={works}
+          cvRef={cvRef}
+        />
       </Wrapper>
     </div>
   );

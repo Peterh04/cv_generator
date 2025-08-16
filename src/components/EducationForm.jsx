@@ -2,6 +2,7 @@ import { useState } from "react";
 import FormInputs from "./FormInputs";
 
 import "../styles/educationForm.css";
+import "../styles/wrapper.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
 
@@ -91,12 +92,12 @@ export default function EducationForm({ schools, setSchools }) {
         Add
       </button>
 
-      <div className="school-preview">
+      <div className="list-preview">
         {schools.length == 0 ? (
           <p>No school history...</p>
         ) : (
           schools.map((school) => (
-            <div className="individual-school-preview" key={school.id}>
+            <div className="individual-list-preview" key={school.id}>
               <h3>{school.schoolName}</h3>
               <button>
                 <FontAwesomeIcon

@@ -12,3 +12,47 @@
 
   background: transparent;
 }
+
+/* List previews for the different forms */
+
+.list-preview {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  min-height: 50px;
+  max-height: 150px;
+
+  margin-top: 20px;
+
+  padding: 10px 20px 10px 20px;
+
+  border-radius: 10px;
+
+  background-color: white;
+
+  overflow-y: auto;
+}
+
+.individual-list-preview {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-top: 10px;
+
+  font-size: 0.8rem;
+}
+
+.individual-list-preview > button {
+  cursor: pointer;
+
+  border: none;
+  background: none;
+}
+
+.individual-list-preview > button > .fa {
+  font-size: 0.8rem;
+
+  color: red;
+}

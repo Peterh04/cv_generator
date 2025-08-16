@@ -1,4 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import doe from "../assets/doe.jpg";
 import {
   faEnvelope,
   faLocationDot,
@@ -6,7 +7,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import "../styles/formPreview.css";
 
-export default function FormPreview({ formData, schools }) {
+export default function FormPreview({ formData, schools, works }) {
   return (
     <div>
       <div className="previewFormContainer">
@@ -50,7 +51,7 @@ export default function FormPreview({ formData, schools }) {
               <>
                 <h2 className="snuggly-header">Education</h2>
 
-                <ul className="school-list">
+                <ul className="list school-list">
                   {schools.map((school) => (
                     <li key={school.id}>
                       <h3>
@@ -68,7 +69,29 @@ export default function FormPreview({ formData, schools }) {
           </div>
         </div>
         <div className="cv-work-experience">
-          <div className="profile-container"></div>
+          <div className="profile-container">
+            <img src={doe} alt="resume_img" className="resume_img" />
+          </div>
+          <div className="timeline-container">
+            {works.map((work) => (
+              <div key={work.id} className="timeline-item">
+                <div className="timeline-column">
+                  <div className="dot"></div>
+                  <div className="line"></div>
+                </div>
+
+                <div className="content">
+                  <h3 className="date">
+                    {new Date(work.jobStartDate).getFullYear()} -{" "}
+                    {new Date(work.jobEndDate).getFullYear()}
+                  </h3>
+                  <h3>{work.companyName}</h3>
+                  <h3>{work.jobTitle}</h3>
+                  <h3 className="jobDescription">{work.jobDescription}</h3>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>
