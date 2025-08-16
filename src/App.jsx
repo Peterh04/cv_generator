@@ -37,13 +37,12 @@ export default function App() {
         {currentForm === "experience" && (
           <WorkExperienceForm works={works} setWorks={setWorks} />
         )}
-        <FormPreview
-          formData={formData}
-          schools={schools}
-          works={works}
-          cvRef={cvRef}
-        />
+
+        <div ref={cvRef}>
+          <FormPreview formData={formData} schools={schools} works={works} />
+        </div>
       </Wrapper>
     </div>
   );
 }
+``;

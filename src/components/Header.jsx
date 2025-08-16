@@ -6,7 +6,7 @@ import { useReactToPrint } from "react-to-print";
 
 export default function Header({ onFormChange, cvRef }) {
   const handlePrint = useReactToPrint({
-    content: () => cvRef.current,
+    contentRef: cvRef,
   });
 
   return (
@@ -23,7 +23,7 @@ export default function Header({ onFormChange, cvRef }) {
       <div className="actionButtons">
         <button
           onClick={() => {
-            handlePrint;
+            handlePrint();
           }}
         >
           <FontAwesomeIcon icon={faPrint} className="fa" />

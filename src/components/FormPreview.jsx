@@ -6,10 +6,11 @@ import {
   faPhone,
 } from "@fortawesome/free-solid-svg-icons";
 import "../styles/formPreview.css";
+import { forwardRef } from "react";
 
-export default function FormPreview({ formData, schools, works }) {
+const FormPreview = forwardRef(({ formData, schools, works }, ref) => {
   return (
-    <div>
+    <div ref={ref}>
       <div className="previewFormContainer">
         <div className="cv-profileSection">
           <div className="cv-header">
@@ -55,8 +56,7 @@ export default function FormPreview({ formData, schools, works }) {
                   {schools.map((school) => (
                     <li key={school.id}>
                       <h3>
-                        {new Date(school.schoolStartDate).getFullYear()}{" "}
-                        <span>-</span>{" "}
+                        {new Date(school.schoolStartDate).getFullYear()} -{" "}
                         {new Date(school.schoolEndDate).getFullYear()}
                       </h3>
                       <h3>{school.schoolName}</h3>
@@ -68,6 +68,7 @@ export default function FormPreview({ formData, schools, works }) {
             )}
           </div>
         </div>
+
         <div className="cv-work-experience">
           <div className="profile-container">
             <img src={doe} alt="resume_img" className="resume_img" />
@@ -96,4 +97,6 @@ export default function FormPreview({ formData, schools, works }) {
       </div>
     </div>
   );
-}
+});
+
+export default FormPreview;
