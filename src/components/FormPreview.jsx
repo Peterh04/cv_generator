@@ -1,14 +1,32 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import doe from "../assets/doe.jpg";
+import { useRef, useState } from "react";
 import {
   faEnvelope,
   faLocationDot,
   faPhone,
+  faPlus,
 } from "@fortawesome/free-solid-svg-icons";
 import "../styles/formPreview.css";
 import { forwardRef } from "react";
 
+faPlus;
+
 const FormPreview = forwardRef(({ formData, schools, works }, ref) => {
+  const [currentImage, setCurrentImage] = useState(doe);
+  const fileInput = useRef(null);
+
+  const handleButtonClick = () => {
+    fileInput.current.click();
+  };
+
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      const url = URL.createObjectURL(file);
+      setCurrentImage(url);
+    }
+  };
   return (
     <div ref={ref}>
       <div className="previewFormContainer">
@@ -50,7 +68,7 @@ const FormPreview = forwardRef(({ formData, schools, works }, ref) => {
           <div className="cv-education">
             {schools.length > 0 && (
               <>
-                <h2 className="snuggly-header">Education</h2>
+                <h3 className="snuggly-header">Education</h3>
 
                 <ul className="list school-list">
                   {schools.map((school) => (
@@ -71,9 +89,24 @@ const FormPreview = forwardRef(({ formData, schools, works }, ref) => {
 
         <div className="cv-work-experience">
           <div className="profile-container">
-            <img src={doe} alt="resume_img" className="resume_img" />
+            <img src={currentImage} alt="resume_img" className="resume_img" />
+            <button className="imageBtn" onClick={handleButtonClick}>
+              <FontAwesomeIcon icon={faPlus} />
+            </button>
+
+            <input
+              type="file"
+              accept="image/*"
+              ref={fileInput}
+              style={{ display: "none" }}
+              onChange={handleFileChange}
+            ></input>
           </div>
           <div className="timeline-container">
+            {works.length > 0 && (
+              <h2 className="snuggly-header">Experiences</h2>
+            )}
+
             {works.map((work) => (
               <div key={work.id} className="timeline-item">
                 <div className="timeline-column">

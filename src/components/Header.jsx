@@ -4,6 +4,10 @@ import { faHexagonNodesBolt, faPrint } from "@fortawesome/free-solid-svg-icons";
 import React from "react";
 import { useReactToPrint } from "react-to-print";
 
+import { CohereClient } from "cohere-ai";
+import API_KEY from "../Api";
+const cohere = new CohereClient({ token: API_KEY });
+
 export default function Header({ onFormChange, cvRef }) {
   const handlePrint = useReactToPrint({
     contentRef: cvRef,

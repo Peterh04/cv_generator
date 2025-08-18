@@ -24,6 +24,30 @@ export default function App() {
 
   const cvRef = useRef();
 
+  const getCvText = () => {
+    let text = `
+    Name: ${formData.firstName} ${formData.lastName}
+    Job Title: ${formData.jobTitle}
+    Email: ${formData.userEmail}
+    Phone: ${formData.userPhone}
+    Address: ${formData.userAddress}
+    
+    Education:
+    ${schools
+      .map((s) => `${s.name}, ${s.degree}, ${s.startDate} - ${s.endDate}`)
+      .join("\n")}
+    
+    Work Experience:
+    ${works
+      .map(
+        (w) =>
+          `${w.company}, ${w.position}, ${w.startDate} - ${w.endDate}\n${w.description}`
+      )
+      .join("\n")}
+  `;
+    return text;
+  };
+
   return (
     <div>
       <Header onFormChange={setCurrentForm} cvRef={cvRef} />
