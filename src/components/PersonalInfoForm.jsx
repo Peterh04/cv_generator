@@ -1,5 +1,5 @@
 import "../styles/form.css";
-import "../styles/PersonalInfo.css";
+import "../styles/personalInfo.css";
 import FormInputs from "../components/FormInputs";
 export default function PersonalInfoForm({ formData, setFormData }) {
   const handleFirstName = (e) => {
